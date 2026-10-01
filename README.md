@@ -178,15 +178,19 @@ ros2 run nav2_map_server map_saver_cli -f ~/Task_Robotics/src/diff_drive_robot/m
 
 ---
 
-## 🎥 Video Demonstrations
+## 🎥 Demonstrations
 
-The following demonstration videos are included in the repository:
-- `task2.webm`: Shows `wheel_tick_pub.py` and `odom_node` running with `/odom` topic verification.
-- `imu_bonus_task.webm`: Shows `imu_publisher` node execution and `/imu/data` topic verification.
-- `navigation_task1.webm`: Shows Gazebo simulation, robot sensor visualization in RViz, and autonomous obstacle avoidance navigation using Nav2.
+### 1. Task 1: Autonomous Nav2 Navigation & Obstacle Avoidance
+![Task 1 Navigation Demo](docs/media/task1_navigation.gif)
+
+### 2. Task 2: Differential Drive Odometry from Wheel Encoder Ticks
+![Task 2 Odometry Demo](docs/media/task2_odometry.gif)
+
+### 3. Bonus Task: Synthetic IMU Publisher Node
+![Bonus IMU Demo](docs/media/bonus_imu.gif)
 
 ---
 
 ## 👤 Author
 - **Name:** Rahul
-- **Email:** rahulrajak6942@gmail.com
+- **Email:** rahulrajak5629@gmail.com
