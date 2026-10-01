@@ -1,0 +1,25 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: True
+
+    # Fast map publishing & responsiveness
+    map_update_interval: 0.5          # Update map every 0.5s (default was 5.0s)
+    transform_timeout: 0.2
+    tf_buffer_duration: 30.0
+    stack_size_to_use: 40000000
+
+    # Motion thresholds for adding scans to map (instant updates)
+    minimum_travel_distance: 0.1     # Process scan every 10cm movement (default was 0.5m)
+    minimum_travel_heading: 0.1      # Process scan every ~5 deg turn (default was 0.5 rad)
+
+    # Sensor & matcher parameters
+    scan_queue_size: 10
+    max_laser_range: 10.0
+    minimum_time_interval: 0.1
+    transform_publish_period: 0.02   # 50 Hz TF publishing
+
+    # Scan matcher
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_angle_penalty: 0.9
+    use_response_expansion: true

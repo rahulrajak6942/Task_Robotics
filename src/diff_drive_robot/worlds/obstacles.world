@@ -1,0 +1,179 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="obstacle_world">
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Physics settings for stable simulation -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <!-- ============ WALLS (6m x 6m room) ============ -->
+
+    <!-- North wall -->
+    <model name="north_wall">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>6.0 0.1 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>6.0 0.1 0.5</size></box></geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>0 3.0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- South wall -->
+    <model name="south_wall">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>6.0 0.1 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>6.0 0.1 0.5</size></box></geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>0 -3.0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- East wall -->
+    <model name="east_wall">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.1 6.0 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.1 6.0 0.5</size></box></geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>3.0 0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- West wall -->
+    <model name="west_wall">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.1 6.0 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.1 6.0 0.5</size></box></geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>-3.0 0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- ============ OBSTACLES ============ -->
+
+    <!-- Box obstacle 1 -->
+    <model name="box_obstacle_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.8 0.8 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.8 0.8 0.5</size></box></geometry>
+          <material>
+            <ambient>0.8 0.4 0.1 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>1.2 1.5 0.25 0 0 0</pose>
+    </model>
+
+    <!-- Box obstacle 2 -->
+    <model name="box_obstacle_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.5 1.5 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.5 1.5 0.5</size></box></geometry>
+          <material>
+            <ambient>0.2 0.7 0.3 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>-1.5 0.5 0.25 0 0 0</pose>
+    </model>
+
+    <!-- Cylinder obstacle 1 -->
+    <model name="cylinder_obstacle_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.3</radius><length>0.5</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.3</radius><length>0.5</length></cylinder></geometry>
+          <material>
+            <ambient>0.7 0.2 0.2 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>0.5 -1.0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- Box obstacle 3 -->
+    <model name="box_obstacle_3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.4 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.4 0.5</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>-0.8 -2.0 0.25 0 0 0</pose>
+    </model>
+
+    <!-- Cylinder obstacle 2 -->
+    <model name="cylinder_obstacle_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material>
+            <ambient>0.8 0.8 0.2 1</ambient>
+          </material>
+        </visual>
+      </link>
+      <pose>2.0 -0.5 0.25 0 0 0</pose>
+    </model>
+
+  </world>
+</sdf>
